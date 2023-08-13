@@ -51,11 +51,14 @@ body {
 .header-title h1 {
     width: 100%;
     font-weight: 700;
-    font-size: 72px;
-    letter-spacing: -4px;
+    font-size: 40px;
     line-height: 1.2em;
     text-align: center;
     margin: 0;
+}
+
+.header-subtitle{
+    text-align: center;
 }
 
 .header-subtitle h2 {
@@ -97,8 +100,7 @@ body {
     overflow: hidden;
     padding: 20px;
     position: relative;
-    width: 610px;
-    max-width: 1200px;
+    width: 1024px;
     will-change: transform;
     overflow: auto;
     outline: none;
@@ -125,17 +127,14 @@ textarea {
 
 .prompt-buttons {
     display: flex;
-    place-content: center;
+    justify-content: end;
     align-items: center;
-    justify-content: flex-end;
-    flex: 0 0 auto;
-    flex-flow: row nowrap;
-    gap: 12px;
-    height: min-content;
-    overflow: hidden;
-    padding: 0px;
-    position: relative;
-    width: 100%;
+    margin: 10px 0px;
+}
+
+.prompt-buttons:hover{
+    scale: 0.99;
+    transition: all 500ms ease-in-out;
 }
 
 .key-stroke {
@@ -180,7 +179,7 @@ textarea {
     gap: 10px;
     height: min-content;
     overflow: hidden;
-    padding: 16px 24px;
+    padding: 10px 24px;
     position: relative;
     text-decoration: none;
     width: min-content;
@@ -269,17 +268,21 @@ textarea {
 }
 
 .output {
-    place-content: center flex-start;
-    align-items: center;
     display: flex;
+    justify-content: start;
+    text-align: start;
     flex: 0 0 auto;
     flex-flow: column nowrap;
     gap: 10px;
-    height: min-content;
-    max-width: 1200px;
+    height: fit-content;
+    max-width: 1024px;
     overflow: hidden;
     position: relative;
     width: 100%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 100px;
 }
 
 .output-header-container {
@@ -313,16 +316,17 @@ textarea {
 .output-content {
     outline: none;
     display: flex;
-    /* max-width: 25%; */
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: start;
+    align-items: start;
     flex-shrink: 0;
     transform: none;
 }
 
 .output-content p {
-    text-align: center;
+    text-align: start;
     white-space: pre-line;
+    
     color: rgba(255, 255, 255, 0.5);
 }
 
@@ -333,43 +337,48 @@ textarea {
     }
 
     .prompt-container {
-        max-width: 600px;
-        width: 100%;
+        width: 600px;
     }
 
     .prompt-box {
-        width: 100%;
+        width: 600px;
+    }
+
+    .output{
+        width: 600px;
     }
 }
 
 @media (max-width: 809px) {
     .container {
         max-width: 500px;
-        width: 100%;
     }
 
-    .prompt-container {
+    .prompt-container{
         max-width: 500px;
         width: 100%;
     }
 
-    .prompt-box {
-        width: 100%;
-    }
+    .prompt-box, .output {
+width: 500px;    }
+
+   
 }
 
 @media (max-width: 600px) {
     .container {
         max-width: 400px;
         width: 100%;
+        padding: 10px;
     }
 
     .header-title h1 {
-        font-size: 50px;
+        font-size: 17px;
     }
 
-    .header-subtitle h2 {
-        text-align: center;
+    .header-subtitle h4 {
+        font-size: 10px;
+        padding: 0px 20px;
     }
 
     .key-stroke, .or {
@@ -385,8 +394,8 @@ textarea {
         width: 100%;
     }
 
-    .prompt-box {
-        width: 100%;
+    .prompt-box, .output {
+        width: 300px;
     }
 }
 
